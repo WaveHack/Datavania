@@ -19,7 +19,31 @@ abstract class AbstractSlugSeeder extends Seeder
         $changed = 0;
 
         foreach ($data as $record) {
+            $relations = [];
+
+            if (isset($record->__relations)) {
+                $relations = (array)$record->__relations;
+                unset($record->__relations);
+            }
+
             $instance = $modelClass::updateOrCreate(['slug' => $record->slug], (array)$record);
+
+            if (!empty($relations)) {
+                foreach ($relations as $relation) {
+                    if ($relation->slug === '##########') {
+                        throw new RuntimeException("Entity with slug '{$record->slug}' needs {$relation->type} relation fixed");
+                    }
+
+                    $class = ucfirst($relation->type);
+                    $fqcn = ('App\Models\\' . $class);
+
+                    $instance->{$relation->type}()->associate(
+                        $fqcn::where('slug', $relation->slug)->firstOrFail()
+                    );
+                }
+
+                $instance->save();
+            }
 
             if ($instance->wasRecentlyCreated) {
                 $added++;

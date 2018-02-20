@@ -9,4 +9,9 @@ class Dlc extends AbstractModel
         'created_at',
         'updated_at',
     ];
+
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
 }

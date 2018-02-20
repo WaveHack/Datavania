@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "soma",
+    "code": "SOM",
+    "name": "Soma Cruz",
+    "base_str": 5,
+    "base_con": 5,
+    "base_int": 5,
+    "base_mnd": 5,
+    "base_lck": 5
+  },
+  {
+    "slug": "alucard",
+    "code": "ALU",
+    "name": "Alucard",
+    "base_str": 6,
+    "base_con": 5,
+    "base_int": 5,
+    "base_mnd": 5,
+    "base_lck": 4
+  },
+  {
+    "slug": "jonathan",
+    "code": "JON",
+    "name": "Jonathan Morris",
+    "base_str": 5,
+    "base_con": 7,
+    "base_int": 3,
+    "base_mnd": 4,
+    "base_lck": 6
+  },
+  {
+    "slug": "shanoa",
+    "code": "SHA",
+    "name": "Shanoa",
+    "base_str": 5,
+    "base_con": 5,
+    "base_int": 6,
+    "base_mnd": 6,
+    "base_lck": 3
+  },
+  {
+    "slug": "charlotte",
+    "code": "CHA",
+    "name": "Charlotte Aulin",
+    "base_str": 4,
+    "base_con": 3,
+    "base_int": 7,
+    "base_mnd": 6,
+    "base_lck": 5,
+    "notes": "Charlotte Aulin is the chick protagonist from Castlevania: Portrait of Ruin ([abbr=\"Nintendo DS\"]NDS[\/abbr]), the other protagonist being [character=\"jonathan\"]Jonathan Morris[\/character]. She is a magic user and has a large array of spells which she must learn by [item=\"bound-spells\"]absorbing[\/item] them with her [item=\"book-of-binding\"]Book of Binding[\/item]. The more copies she learns by successfully absorbing a spell, the more powerful that spell becomes.\\r\\n\\r\\nUntil [chapter=\"origins\"]Chapter 10[\/chapter], most of her spells are pretty lacking in terms of damage, ability to be aimed properly or they just cost too much [abbr=\"Mana Points\"]MP[\/abbr] to be used efficiently. However, she makes a great support user when stacking [abbr=\"Mana Points\"]MP[\/abbr] regeneration gear and maximizing her [item=\"heal\"]Heal[\/item] spell. Once [chapter=\"origins\"]Chapter 10[\/chapter] becomes available, her [item=\"r-summon-skeleton\"]R. Summon Skeleton[\/item] and [item=\"r-fireball\"]R. Fireball[\/item] spells - once maxed - become very powerful weaponry which will tear through even the toughest enemies with ease.\\r\\n\\r\\nHowever, her lack of mobility in the form of no jumpkicking and no shortcuts usually leaves much to be desired about her, but she can be a powerful weapon in the hands of a skilled player regardless."
+  },
+  {
+    "slug": "julius",
+    "code": "JUL",
+    "name": "Julius Belmont",
+    "base_str": 7,
+    "base_con": 4,
+    "base_int": 7,
+    "base_mnd": 4,
+    "base_lck": 5,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "julius-belmont-character-pack"
+      }
+    ]
+  },
+  {
+    "slug": "richter",
+    "code": "RIC",
+    "name": "Richter Belmont",
+    "base_str": 8,
+    "base_con": 5,
+    "base_int": 5,
+    "base_mnd": 5,
+    "base_lck": 4,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "richter-belmont-character-pack"
+      }
+    ]
+  },
+  {
+    "slug": "yoko",
+    "code": "YOK",
+    "name": "Yoko Belnades",
+    "base_str": 4,
+    "base_con": 4,
+    "base_int": 8,
+    "base_mnd": 6,
+    "base_lck": 5,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "yoko-belnades-character-pack"
+      }
+    ]
+  },
+  {
+    "slug": "maria",
+    "code": "MAR",
+    "name": "Maria Renard",
+    "base_str": 5,
+    "base_con": 2,
+    "base_int": 6,
+    "base_mnd": 6,
+    "base_lck": 8,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "maria-rendard-character-pack"
+      }
+    ]
+  },
+  {
+    "slug": "simon",
+    "code": "SIM",
+    "name": "Simon Belmont",
+    "base_str": 7,
+    "base_con": 5,
+    "base_int": 7,
+    "base_mnd": 4,
+    "base_lck": 4,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "simon-belmont-character-pack"
+      }
+    ]
+  },
+  {
+    "slug": "getsu-fuma",
+    "code": "FUM",
+    "name": "Getsu Fuma",
+    "base_str": 7,
+    "base_con": 4,
+    "base_int": 7,
+    "base_mnd": 5,
+    "base_lck": 4,
+    "__relations": [
+      {
+        "type": "dlc",
+        "slug": "getsu-fuma-character-pack"
+      }
+    ]
+  }
+]
