@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "knife",
+    "name": "Knife",
+    "description": "Cheap pocket knife.",
+    "rarity": 1,
+    "value": 250,
+    "stat_atk": 3,
+    "__relations": [
+      {
+        "type": "item-type",
+        "slug": "dagger"
+      }
+    ]
+  }
+]
