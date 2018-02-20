@@ -1,0 +1,126 @@
+[
+  {
+    "slug": "dagger",
+    "name": "Dagger"
+  },
+  {
+    "slug": "sword",
+    "name": "Sword"
+  },
+  {
+    "slug": "rapier",
+    "name": "Rapier"
+  },
+  {
+    "slug": "greatsword",
+    "name": "Greatsword"
+  },
+  {
+    "slug": "katana",
+    "name": "Katana"
+  },
+  {
+    "slug": "axe",
+    "name": "Axe"
+  },
+  {
+    "slug": "cestus",
+    "name": "Cestus"
+  },
+  {
+    "slug": "cudgel",
+    "name": "Cudgel"
+  },
+  {
+    "slug": "lance",
+    "name": "Lance"
+  },
+  {
+    "slug": "firearm",
+    "name": "Firearm"
+  },
+  {
+    "slug": "shield",
+    "name": "Shield"
+  },
+  {
+    "slug": "snake-sword",
+    "name": "Snake Sword"
+  },
+  {
+    "slug": "weapon-glyph",
+    "name": "Weapon Glyph"
+  },
+  {
+    "slug": "other-weapon",
+    "name": "Other Weapon"
+  },
+  {
+    "slug": "subweapon",
+    "name": "Subweapon"
+  },
+  {
+    "slug": "bullet-soul",
+    "name": "Bullet Soul"
+  },
+  {
+    "slug": "dark-magic",
+    "name": "Dark Magic"
+  },
+  {
+    "slug": "bound-spell",
+    "name": "Bound Spell"
+  },
+  {
+    "slug": "magic-spell",
+    "name": "Magic Spell"
+  },
+  {
+    "slug": "glyph-spell",
+    "name": "Glyph Spell"
+  },
+  {
+    "slug": "guardian-soul",
+    "name": "Guardian Soul"
+  },
+  {
+    "slug": "enchantment-soul",
+    "name": "Enchantment Soul"
+  },
+  {
+    "slug": "head",
+    "name": "Head"
+  },
+  {
+    "slug": "chest",
+    "name": "Chest"
+  },
+  {
+    "slug": "legs",
+    "name": "Legs"
+  },
+  {
+    "slug": "back",
+    "name": "Back"
+  },
+  {
+    "slug": "accessories",
+    "name": "Accessories"
+  },
+  {
+    "slug": "consumable",
+    "name": "Consumable"
+  },
+  {
+    "slug": "martial-arts",
+    "name": "Martial Arts"
+  },
+  {
+    "slug": "personal-action",
+    "name": "Personal Action"
+  },
+  {
+    "slug": "hidden-item",
+    "name": "Hidden Item"
+  }
+]
