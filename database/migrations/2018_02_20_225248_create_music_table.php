@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharactersTable extends Migration
+class CreateMusicTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateCharactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('characters', function (Blueprint $table) {
+        Schema::create('music', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
-            $table->string('code', 3)->unique();
             $table->string('name');
-            $table->integer('base_str');
-            $table->integer('base_con');
-            $table->integer('base_int');
-            $table->integer('base_mnd');
-            $table->integer('base_lck');
+            $table->string('youtube_id')->nullable();
             $table->unsignedInteger('dlc_id')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
@@ -38,6 +33,6 @@ class CreateCharactersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('characters');
+        Schema::dropIfExists('music');
     }
 }

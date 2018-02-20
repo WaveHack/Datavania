@@ -14,4 +14,9 @@ class Dlc extends AbstractModel
     {
         return $this->hasMany(Character::class);
     }
+
+    public function music()
+    {
+        return $this->hasMany(Music::class);
+    }
 }
