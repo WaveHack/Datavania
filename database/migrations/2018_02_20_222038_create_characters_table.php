@@ -15,7 +15,6 @@ class CreateCharactersTable extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dlc_id')->nullable();
             $table->string('slug')->unique();
             $table->string('code', 3)->unique();
             $table->string('name');
@@ -24,6 +23,7 @@ class CreateCharactersTable extends Migration
             $table->integer('base_int');
             $table->integer('base_mnd');
             $table->integer('base_lck');
+            $table->integer('dlc_id')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
 
