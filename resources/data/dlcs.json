@@ -4,7 +4,7 @@
     "name": "Extra Stage: The Legend of Fuma",
     "description": "\"Getsu Fuma Den,\" a Japan-themed action game, makes a cameo appearance in the Castlevania series. Enjoy the vintage graphics!",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2011-02-02",
     "size": "11.61 MB"
   },
@@ -13,16 +13,16 @@
     "name": "Getsu Fuma Character Pack",
     "description": "Play as Getsu Fuma, an extra character.",
     "type": "Game Add-on",
-    "msp": "160",
+    "msp": 160,
     "release_date": "2011-02-02",
     "size": "6.34 MB"
   },
   {
     "slug": "additional-characters-picture-pack-castlevania-hod",
     "name": "Additional Characters Picture Pack - Castlevania HoD",
-    "description": "This Castlevania: Harmony of Despair Picture Pack features Julius Belmont and Yoko Belnade from Castlevania: Dawn of Sorrow, Richter Belmont and Maria Renard from Castlevania: Rondo of Blood and Axe Knight. There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "This Castlevania: Harmony of Despair Picture Pack features Julius Belmont and Yoko Belnade from Castlevania: Dawn of Sorrow, Richter Belmont and Maria Renard from Castlevania: Rondo of Blood and Axe Knight. There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Gamer Picture",
-    "msp": "80",
+    "msp": 80,
     "release_date": "2011-02-02",
     "size": "172 KB"
   },
@@ -31,7 +31,7 @@
     "name": "Simon Belmont Character Pack",
     "description": "Play as Simon Belmont, an extra character.",
     "type": "Game Add-on",
-    "msp": "160",
+    "msp": 160,
     "release_date": "2011-01-26",
     "size": "5.90 MB"
   },
@@ -40,7 +40,7 @@
     "name": "Extra Stage: Origins",
     "description": "A stage that goes back to the roots of Castlevania with 8-bit graphics. Do today's vampire hunters have what it takes to beat this blast from the past?",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2011-01-26",
     "size": "28.46 MB"
   },
@@ -49,7 +49,7 @@
     "name": "Extra Stage: Lord of Flies",
     "description": "An extra stage modeled after an above-ground section of Castlevania: Symphony of the Night. You'll face Beelzebub, Lord of Flies.",
     "type": "Game Add-on",
-    "msp": "320",
+    "msp": 320,
     "release_date": "2011-01-19",
     "size": "13.11 MB"
   },
@@ -58,7 +58,7 @@
     "name": "Extra Stage: The One Who Is Many",
     "description": "An extra stage modeled after the underground section of Castlevania: Symphony of the Night. You'll face Legion, the boss that epitomizes \"all for one, one for all.\"",
     "type": "Game Add-on",
-    "msp": "320",
+    "msp": 320,
     "release_date": "2011-01-12",
     "size": "29.06 MB"
   },
@@ -67,7 +67,7 @@
     "name": "Yoko Belnades Character Pack",
     "description": "Manifest as this witch ally of the Belmont clan and inherit the powers of the magic seal!",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2010-11-24",
     "size": "7.15 MB"
   },
@@ -76,7 +76,7 @@
     "name": "Julius Belmont Character Pack",
     "description": "Forget your past as Julius Belmont and reign a dawn of sorrow on the creatures of the night!",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2010-11-24",
     "size": "7.50 MB"
   },
@@ -85,7 +85,7 @@
     "name": "Music Pack 2",
     "description": "Five tunes for use in the game: Heart of Fire, Aquarius, Slash, Divine Bloodlines, and Simon's Theme.",
     "type": "Game Add-on",
-    "msp": "160",
+    "msp": 160,
     "release_date": "2010-11-10",
     "size": "12.54 MB"
   },
@@ -94,7 +94,7 @@
     "name": "Maria Rendard Character Pack",
     "description": "Play as the petite vampire hunter and use her magical abilities to vanquish any monster in your path!",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2010-10-27",
     "size": "7.28 MB"
   },
@@ -103,7 +103,7 @@
     "name": "Richter Belmont Character Pack",
     "description": "Feel the merciless power of the Vampire Killer whip in your own hands with Richter Belmont!",
     "type": "Game Add-on",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2010-10-27",
     "size": "7.42 MB"
   },
@@ -112,7 +112,7 @@
     "name": "Music Pack 1",
     "description": "Five tunes for use in the game: Pitiful Scion, Pitch-Black Intrusion, Invitation of a Crazed Moon, The Hidden Curse, and An Empty Tome.",
     "type": "Game Add-on",
-    "msp": "160",
+    "msp": 160,
     "release_date": "2010-10-13",
     "size": "16.43 MB"
   },
@@ -121,43 +121,43 @@
     "name": "Beauty, Desire, Situation Dire Map Pack",
     "description": "Explore and battle within an all-new map for Castlevania: Harmony of Despair inspired by psychedelic Egyptian art.",
     "type": "Game Add-on",
-    "msp": "400",
+    "msp": 400,
     "release_date": "2010-09-29",
     "size": "4.36 MB"
   },
   {
     "slug": "dracula-variety-picture-pack-castlevania-hod",
     "name": "Dracula Variety Picture Pack - Castlevania HoD",
-    "description": "This Castlevania: Harmony of Despair Picture Pack features Dracula. Also included are a variety of sprite art graphics featuring Soma Cruz and various edibles and enemies from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "This Castlevania: Harmony of Despair Picture Pack features Dracula. Also included are a variety of sprite art graphics featuring Soma Cruz and various edibles and enemies from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Gamer Picture",
-    "msp": "80",
+    "msp": 80,
     "release_date": "2010-08-11",
     "size": "172 KB"
   },
   {
     "slug": "charlotte-variety-picture-pack-castlevania-hod",
     "name": "Charlotte Variety Picture Pack - Castlevania HoD",
-    "description": "This Castlevania: Harmony of Despair Picture Pack features Charlotte Aulin fom Castlevania: Portrait of Ruin. Also included are a variety of sprite art graphics of Charlotte and various enemies and edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "This Castlevania: Harmony of Despair Picture Pack features Charlotte Aulin fom Castlevania: Portrait of Ruin. Also included are a variety of sprite art graphics of Charlotte and various enemies and edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Gamer Picture",
-    "msp": "80",
+    "msp": 80,
     "release_date": "2010-08-11",
     "size": "156 KB"
   },
   {
     "slug": "jonathan-variety-picture-pack-castlevania-hod",
     "name": "Jonathan Variety Picture Pack - Castlevania HoD",
-    "description": "This Castlevania: Harmony of Despair Picture Pack features Jonathan Morris from Castlevania: Portrait of Ruin. Also included are a variety of sprite art graphics of Jonathan Morris, Charlotte Aulin and various edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "This Castlevania: Harmony of Despair Picture Pack features Jonathan Morris from Castlevania: Portrait of Ruin. Also included are a variety of sprite art graphics of Jonathan Morris, Charlotte Aulin and various edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Gamer Picture",
-    "msp": "80",
+    "msp": 80,
     "release_date": "2010-08-11",
     "size": "156 KB"
   },
   {
     "slug": "shanoa-variety-picture-pack-castlevania-hod",
     "name": "Shanoa Variety Picture Pack - Castlevania HoD",
-    "description": "This Castlevania: Harmony of Despair Picture Pack features Shanoa from Castlevania: Order of Ecclesia. Also included are a variety of sprite art graphics of enemies and edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "This Castlevania: Harmony of Despair Picture Pack features Shanoa from Castlevania: Order of Ecclesia. Also included are a variety of sprite art graphics of enemies and edibles from the legendary Castlevania series. There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Gamer Picture",
-    "msp": "80",
+    "msp": 80,
     "release_date": "2010-08-11",
     "size": "156 KB"
   },
@@ -166,16 +166,16 @@
     "name": "Trial Game - Castlevania Harmony of Despair",
     "description": "(ONLINE INTERACTIONS NOT RATED BY THE ESRB) Step into the shadows of the hell house: Castlevania is back in all its pixel-powered 2D glory, this time in full 1080p! Call upon the series' most hallowed heroes and vanquish your nemesis, Dracula! All-new multiplayer modes like 6-player Co-op and Survival have been whipped up for you, too... but enough talk. Have at it!",
     "type": "Game Demo",
-    "msp": "0",
+    "msp": 0,
     "release_date": "2010-08-04",
     "size": "360.45 MB"
   },
   {
     "slug": "full-game-castlevania-harmony-of-despair",
     "name": "Full Game - Castlevania Harmony of Despair",
-    "description": "(ONLINE INTERACTIONS NOT RATED BY THE ESRB) Step into the shadows of the hell house: Castlevania is back in all its pixel-powered 2D glory, this time in full 1080p! Call upon the series' most hallowed heroes and vanquish your nemesis, Dracula! All-new multiplayer modes like 6-player Co-op and Survival have been whipped up for you, too... but enough talk. Have at it! There are no refunds for this item. For more information, see www.xbox.com/live/accounts.",
+    "description": "(ONLINE INTERACTIONS NOT RATED BY THE ESRB) Step into the shadows of the hell house: Castlevania is back in all its pixel-powered 2D glory, this time in full 1080p! Call upon the series' most hallowed heroes and vanquish your nemesis, Dracula! All-new multiplayer modes like 6-player Co-op and Survival have been whipped up for you, too... but enough talk. Have at it! There are no refunds for this item. For more information, see www.xbox.com\/live\/accounts.",
     "type": "Game",
-    "msp": "1200",
+    "msp": 1200,
     "release_date": "2010-07-29",
     "size": "360.45 MB"
   },
@@ -184,7 +184,7 @@
     "name": "Castlevania HoD Premium Theme",
     "description": "Transport your dashboard to the realm of Castlevania with vampire hunters, monsters from the army of Dracula and many more ghoulish themes! For more info on this game, check out Konami.com.",
     "type": "Theme",
-    "msp": "240",
+    "msp": 240,
     "release_date": "2010-07-14",
     "size": "6.78 MB"
   },
@@ -193,7 +193,7 @@
     "name": "Castlevania Harmony of Despair Trailer (HD)",
     "description": "Watch the coolest new game trailers from E3 2010.",
     "type": "Game Video",
-    "msp": "0",
+    "msp": 0,
     "release_date": "2010-06-19",
     "size": "46.61 MB"
   }
