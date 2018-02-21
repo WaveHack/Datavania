@@ -39,10 +39,16 @@ abstract class AbstractSlugSeeder extends Seeder
                     throw new RuntimeException("Entity with slug '{$record->slug}' needs {$relation->type} relation fixed");
                 }
 
-                $class = studly_case($relation->type);
+                if (isset($relation->class)) {
+                    $class = studly_case($relation->class);
+                } else {
+                    $class = studly_case($relation->type);
+                }
+
                 $fqcn = ('App\Models\\' . $class);
                 $method = camel_case($relation->type);
 
+                // if $relation->class exists, $fqcn = App\Models\$relation->class
                 $relatedModel = $fqcn::where('slug', $relation->slug)->first();
 
                 if (!$relatedModel) {

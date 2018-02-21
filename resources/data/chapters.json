@@ -10,14 +10,17 @@
     "chests_purple": 2,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "bell"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "ruined-castle-corridor"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "into-the-dark-night"
       }
@@ -34,14 +37,17 @@
     "chests_purple": 3,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "crown"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "after-confession"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "into-the-dark-night"
       }
@@ -58,14 +64,17 @@
     "chests_purple": 4,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "moai"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "phantom-of-fear"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "piercing-battle-fury"
       }
@@ -82,14 +91,17 @@
     "chests_purple": 5,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "goemon"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "gaze-up-at-the-darkness"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "esquisse-of-violence"
       }
@@ -106,14 +118,17 @@
     "chests_purple": 3,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "vic-viper"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "ebony-wings"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "symphony-of-battle"
       }
@@ -130,18 +145,22 @@
     "chests_purple": 2,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "konami-man"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "the-colossus"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "order-of-the-demon"
       },
       {
+        "class": "music",
         "type": "boss2_music",
         "slug": "dance-of-illusions"
       }
@@ -158,14 +177,17 @@
     "chests_purple": 5,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "vick13"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "hail-from-the-past"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "piercing-silence"
       },
@@ -186,14 +208,17 @@
     "chests_purple": 4,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "lucky-cat"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "the-lost-portrait"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "poetic-death"
       },
@@ -214,14 +239,17 @@
     "chests_purple": 5,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "twin-bee"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "castle-dracula"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "the-horde-s-festival"
       },
@@ -242,10 +270,12 @@
     "chests_purple": 5,
     "__relations": [
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "vampire-killer"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "nothing-to-lose"
       },
@@ -266,14 +296,17 @@
     "chests_purple": 6,
     "__relations": [
       {
+        "class": "item",
         "type": "hidden_item",
         "slug": "facade-card"
       },
       {
+        "class": "music",
         "type": "stage_music",
         "slug": "go-getsu-fuma"
       },
       {
+        "class": "music",
         "type": "boss_music",
         "slug": "ryukotsuki"
       },
