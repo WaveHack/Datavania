@@ -1,12 +1,15 @@
 <?php
 
+use CloudCreativity\LaravelJsonApi\Routing\ApiGroup;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 
 /** @var \Illuminate\Routing\Router $router */
 
-$router->group(['prefix' => 'v1'], function (Router $router) {
+JsonApi::register('v1', ['namespace' => 'Api\V1'], function (ApiGroup $api, Router $router) {
 
-    $router->resource('achievement', 'Api\V1\AchievementController', ['only' => ['index', 'show']]);
+    $api->resource('achievements', [
+        'only' => ['index', 'read'],
+    ]);
 
 });

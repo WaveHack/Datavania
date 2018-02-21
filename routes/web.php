@@ -6,6 +6,17 @@ use Illuminate\Routing\Router;
 
 $router->get('/', function () {
 
+    return \App\Models\Music::first();
+
+
+    return \App\Models\Chapter::with([
+        'bossMusic',
+        'boss2Music',
+        'dlc',
+        'hiddenItem',
+        'stageMusic',
+    ])->get();
+
     $input = [
 
 ['caught-in-the-cradle-of-decay', 1, 'Caught in the Cradle of Decay', 5, 3, 2, 4, 2, 'Bell', 1, 4, NULL, NULL, NULL],
