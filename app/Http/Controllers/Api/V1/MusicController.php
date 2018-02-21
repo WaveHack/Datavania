@@ -12,20 +12,20 @@ class MusicController extends AbstractApiController
 {
     public function index()
     {
-        $characters = QueryBuilder::for(Music::class)
+        $music = QueryBuilder::for(Music::class)
             ->allowedFilters('slug', 'name')
             ->allowedIncludes('dlc')
             ->paginate();
 
-        return new MusicCollection($characters);
+        return new MusicCollection($music);
     }
 
     public function show(int $id)
     {
-        $character = QueryBuilder::for(Music::class)
+        $music = QueryBuilder::for(Music::class)
             ->allowedIncludes('dlc')
             ->findOrFail($id);
 
-        return new MusicResource($character);
+        return new MusicResource($music);
     }
 }
