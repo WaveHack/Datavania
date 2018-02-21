@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MusicSeeder::class);
         $this->call(ItemTypeSeeder::class);
         $this->call(ItemSeeder::class);
+        $this->call(ChapterSeeder::class);
     }
 }

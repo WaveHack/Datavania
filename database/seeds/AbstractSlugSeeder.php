@@ -10,7 +10,7 @@ abstract class AbstractSlugSeeder extends Seeder
 
     public function run()
     {
-        $modelClass = $this->getModelClass();
+        $modelFqcn = $this->getModelClass();
         $jsonDataPath = $this->getJSONDataPath();
 
         $data = json_decode(file_get_contents($jsonDataPath));
@@ -26,10 +26,10 @@ abstract class AbstractSlugSeeder extends Seeder
                 unset($record->__relations);
             }
 
-            $instance = $modelClass::where('slug', $record->slug)->first();
+            $instance = $modelFqcn::where('slug', $record->slug)->first();
 
             if (!$instance) {
-                $instance = new $modelClass;
+                $instance = new $modelFqcn;
             }
 
             $instance->fill((array)$record);
@@ -43,9 +43,16 @@ abstract class AbstractSlugSeeder extends Seeder
                 $fqcn = ('App\Models\\' . $class);
                 $method = camel_case($relation->type);
 
-                $instance->$method()->associate(
-                    $fqcn::where('slug', $relation->slug)->firstOrFail()
-                );
+                $relatedModel = $fqcn::where('slug', $relation->slug)->first();
+
+                if (!$relatedModel) {
+                    $modelClass = str_replace('App\Models\\', '', $modelFqcn);
+                    $this->command->warn("{$class} '{$relation->slug}' not found for {$modelClass} '{$record->slug}'. Skipping");
+
+                    continue;
+                }
+
+                $instance->$method()->associate($relatedModel);
             }
 
             $instance->save();
@@ -60,7 +67,7 @@ abstract class AbstractSlugSeeder extends Seeder
         }
 
         if (($added > 0) || ($changed > 0)) {
-            $className = last(explode('\\', strtolower($modelClass)));
+            $className = last(explode('\\', strtolower($modelFqcn)));
 
             if ($added > 0) {
                 $this->command->info($added . ' ' . str_plural($className, $added) . ' added');

@@ -10,6 +10,11 @@ class Dlc extends AbstractModel
         'updated_at',
     ];
 
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class);
+    }
+
     public function characters()
     {
         return $this->hasMany(Character::class);
