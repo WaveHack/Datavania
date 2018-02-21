@@ -8,7 +8,7 @@
     "stat_atk": 3,
     "__relations": [
       {
-        "type": "item-type",
+        "relation": "item-type",
         "slug": "dagger"
       }
     ]

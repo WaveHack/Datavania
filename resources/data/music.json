@@ -41,7 +41,7 @@
     "youtube_id": "8Rk2uClRkM4",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "beauty-desire-situation-dire-map-pack"
       }
     ],
@@ -59,7 +59,7 @@
     "youtube_id": "w3IZxbMf0XY",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "beauty-desire-situation-dire-map-pack"
       }
     ],
@@ -119,7 +119,7 @@
     "youtube_id": "Pu3z-JcEkBQ",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-the-legend-of-fuma"
       }
     ],
@@ -131,7 +131,7 @@
     "youtube_id": "bvjB3m7gp70",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-the-legend-of-fuma"
       }
     ],
@@ -143,7 +143,7 @@
     "youtube_id": "crUygPP0uEI",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-origins"
       }
     ],
@@ -155,7 +155,7 @@
     "youtube_id": "Dk90ZFbUwus",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-origins"
       }
     ],
@@ -221,7 +221,7 @@
     "youtube_id": "vEail1kgF0M",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-lord-of-flies"
       }
     ],
@@ -233,7 +233,7 @@
     "youtube_id": "ZKFE0hTERuo",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-lord-of-flies"
       }
     ],
@@ -245,7 +245,7 @@
     "youtube_id": "IHRorXBU_Ls",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-the-one-who-is-many"
       }
     ],
@@ -257,7 +257,7 @@
     "youtube_id": "5s-IQnfyCQw",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "extra-stage-the-one-who-is-many"
       }
     ],
@@ -269,7 +269,7 @@
     "youtube_id": "tsSo7Te9nTU",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-2"
       }
     ],
@@ -281,7 +281,7 @@
     "youtube_id": "36LDTowefSw",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-2"
       }
     ],
@@ -293,7 +293,7 @@
     "youtube_id": "GLxfDpRQECM",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-2"
       }
     ],
@@ -305,7 +305,7 @@
     "youtube_id": "i5hdTL7BGpI",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-2"
       }
     ],
@@ -317,7 +317,7 @@
     "youtube_id": "ONCb0hKA13w",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-2"
       }
     ],
@@ -329,7 +329,7 @@
     "youtube_id": "Hs0UF-9mx0o",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-1"
       }
     ],
@@ -341,7 +341,7 @@
     "youtube_id": "XZCF_80Iy58",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-1"
       }
     ],
@@ -353,7 +353,7 @@
     "youtube_id": "DgFwL504jck",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-1"
       }
     ],
@@ -365,7 +365,7 @@
     "youtube_id": "MZL4COukH4Y",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-1"
       }
     ],
@@ -377,7 +377,7 @@
     "youtube_id": "W8-LCIKi71c",
     "__relations": [
       {
-        "type": "dlc",
+        "relation": "dlc",
         "slug": "music-pack-1"
       }
     ],
