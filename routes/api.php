@@ -20,11 +20,13 @@ $router->group(['prefix' => 'v1'], function (Router $router) {
             'achievements' => url('api/v1/achievement'),
             'characters' => url('api/v1/character'),
             'dlcs' => url('api/v1/dlc'),
+            'music' => url('api/v1/music'),
         ]]);
     });
 
     $router->resource('achievement', 'Api\V1\AchievementController', ['only' => ['index', 'show']]);
     $router->resource('character', 'Api\V1\CharacterController', ['only' => ['index', 'show']]);
     $router->resource('dlc', 'Api\V1\DlcController', ['only' => ['index', 'show']]);
+    $router->resource('music', 'Api\V1\MusicController', ['only' => ['index', 'show']]);
 
 });
