@@ -16,7 +16,7 @@ class AchievementController extends AbstractApiController
             ->allowedFilters('slug', 'name')
             ->get();
 
-        return new AchievementCollection(AchievementResource::collection($achievements));
+        return new AchievementCollection($achievements);
     }
 
     public function show(int $id)

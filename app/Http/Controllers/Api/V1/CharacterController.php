@@ -17,7 +17,7 @@ class CharacterController extends AbstractApiController
             ->allowedIncludes('dlc')
             ->paginate();
 
-        return new CharacterCollection(CharacterResource::collection($characters));
+        return new CharacterCollection($characters);
     }
 
     public function show(int $id)

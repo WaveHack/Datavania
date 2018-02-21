@@ -17,7 +17,7 @@ class MusicController extends AbstractApiController
             ->allowedIncludes('dlc')
             ->paginate();
 
-        return new MusicCollection(MusicResource::collection($characters));
+        return new MusicCollection($characters);
     }
 
     public function show(int $id)

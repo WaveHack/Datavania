@@ -11,6 +11,6 @@ class MusicCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return $this->collection;
+        return MusicResource::collection($this->collection);
     }
 }

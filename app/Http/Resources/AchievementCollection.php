@@ -11,6 +11,6 @@ class AchievementCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return $this->collection;
+        return AchievementResource::collection($this->collection);
     }
 }
