@@ -21,7 +21,7 @@ class DlcResource extends JsonResource
             'release_date' => $this->release_date,
             'size' => $this->size,
             'notes' => $this->notes,
-//            'chapters' => ChapterCollection::make($this->whenLoaded('chapters')),
+            'chapters' => ChapterCollection::make($this->whenLoaded('chapters')),
             'characters' => CharacterCollection::make($this->whenLoaded('characters')),
             'music' => MusicCollection::make($this->whenLoaded('music')),
             'created_at' => $this->created_at,

@@ -14,7 +14,7 @@ class AchievementController extends AbstractApiController
     {
         $achievements = QueryBuilder::for(Achievement::class)
             ->allowedFilters('slug', 'name')
-            ->get();
+            ->paginate();
 
         return new AchievementCollection($achievements);
     }
