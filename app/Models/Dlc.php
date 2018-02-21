@@ -4,6 +4,10 @@ namespace App\Models;
 
 class Dlc extends AbstractModel
 {
+    protected $casts = [
+        'msp' => 'int',
+    ];
+
     protected $dates = [
         'release_date',
         'created_at',
