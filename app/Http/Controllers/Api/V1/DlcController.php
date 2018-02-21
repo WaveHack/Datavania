@@ -16,11 +16,14 @@ class DlcController extends AbstractApiController
             ->allowedFilters('slug', 'name', 'type')
             ->paginate();
 
-        return new DlcCollection($dlcs);
+        return new DlcCollection(DlcResource::collection($dlcs));
     }
 
-    public function show(Dlc $dlc)
+    public function show(int $id)
     {
+        $dlc = QueryBuilder::for(Dlc::class)
+            ->findOrFail($id);
+
         return new DlcResource($dlc);
     }
 }

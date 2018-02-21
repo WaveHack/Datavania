@@ -20,6 +20,7 @@ class DlcResource extends JsonResource
             'msp' => $this->msp,
             'release_date' => $this->release_date,
             'size' => $this->size,
+            'notes' => $this->notes,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

@@ -16,11 +16,14 @@ class AchievementController extends AbstractApiController
             ->allowedFilters('slug', 'name')
             ->get();
 
-        return new AchievementCollection($achievements);
+        return new AchievementCollection(AchievementResource::collection($achievements));
     }
 
-    public function show(Achievement $achievement)
+    public function show(int $id)
     {
+        $achievement = QueryBuilder::for(Achievement::class)
+            ->findOrFail($id);
+
         return new AchievementResource($achievement);
     }
 }
