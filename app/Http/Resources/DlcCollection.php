@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class AchievementCollection extends ResourceCollection
+class DlcCollection extends ResourceCollection
 {
     /**
      * {@inheritdoc}

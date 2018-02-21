@@ -18,9 +18,11 @@ $router->group(['prefix' => 'v1'], function (Router $router) {
     $router->get('/', function (Request $request) {
         return json_encode(['resources' => [
             'achievements' => url('api/v1/achievement'),
+            'dlcs' => url('api/v1/dlc'),
         ]]);
     });
 
     $router->resource('achievement', 'Api\V1\AchievementController', ['only' => ['index', 'show']]);
+    $router->resource('dlc', 'Api\V1\DlcController', ['only' => ['index', 'show']]);
 
 });
