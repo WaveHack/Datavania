@@ -52,7 +52,7 @@ class CreateItemsTable extends Migration
             $table->enum('attribute1', $this->attributeHelper->getAttributes())->nullable();
             $table->enum('attribute2', $this->attributeHelper->getAttributes())->nullable();
             $table->boolean('is_consumable')->default(false);
-            $table->boolean('consumes_over_time')->default(false);
+            $table->boolean('is_consumed_over_time')->default(false);
             $table->unsignedInteger('dlc_id')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
