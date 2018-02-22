@@ -22,7 +22,7 @@ class ItemTypeController extends AbstractApiController
     public function show(int $id)
     {
         $itemType = QueryBuilder::for(ItemType::class)
-            // todo: allowed include: items
+            ->allowedIncludes('items')
             ->findOrFail($id);
 
         return new ItemTypeResource($itemType);
