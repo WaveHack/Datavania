@@ -21,6 +21,7 @@ $router->group(['prefix' => 'v1'], function (Router $router) {
             'chapters' => url('api/v1/chapter'),
             'characters' => url('api/v1/character'),
             'dlcs' => url('api/v1/dlc'),
+            'item-types' => url('api/v1/item-types'),
             'music' => url('api/v1/music'),
         ]]);
     });
@@ -29,6 +30,7 @@ $router->group(['prefix' => 'v1'], function (Router $router) {
     $router->resource('chapter', 'Api\V1\ChapterController', ['only' => ['index', 'show']]);
     $router->resource('character', 'Api\V1\CharacterController', ['only' => ['index', 'show']]);
     $router->resource('dlc', 'Api\V1\DlcController', ['only' => ['index', 'show']]);
+    $router->resource('item-types', 'Api\V1\ItemTypeController', ['only' => ['index', 'show']]);
     $router->resource('music', 'Api\V1\MusicController', ['only' => ['index', 'show']]);
 
 });
