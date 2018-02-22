@@ -5,10 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Api\AbstractApiController;
 use App\Http\Resources\ChapterCollection;
 use App\Http\Resources\ChapterResource;
-use App\Http\Resources\CharacterCollection;
-use App\Http\Resources\CharacterResource;
 use App\Models\Chapter;
-use App\Models\Character;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class ChapterController extends AbstractApiController
