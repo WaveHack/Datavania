@@ -1,15 +1,11 @@
 /.idea/
 /.vscode/
 /.vagrant/
-/nova/
 /node_modules/
 /public/assets/
 /public/hot/
-/public/nova-assets/
 /public/storage/
 /public/mix-manifest.json
-/resources/lang/vendor/nova/
-/resources/views/vendor/nova/
 /storage/*.key
 /vendor/
 /.env
