@@ -12,8 +12,8 @@ for (const dir in vendorDirs) {
 
 // mix.copy('app/resources/images', 'public/assets/images');
 
-mix.js('resources/js/app.js', 'public/assets')
-    .sass('resources/sass/app.scss', 'public/assets');
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');
 
 if (mix.inProduction()) {
     mix.version();
