@@ -37,3 +37,7 @@ $router->group(['prefix' => 'v1'], function (Router $router) {
     $router->resource('music', 'Api\V1\MusicController', ['only' => ['index', 'show']]);
 
 });
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});

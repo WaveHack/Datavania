@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Routing\Router;
-
 /** @var \Illuminate\Routing\Router $router */
 
 $router->get('/', function () {
+    return view('welcome');
 
     return \App\Models\Music::first();
 
