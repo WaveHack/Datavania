@@ -10,8 +10,6 @@ for (const dir in vendorDirs) {
     mix.copyDirectory(dir, vendorDirs[dir]);
 }
 
-// mix.copy('app/resources/images', 'public/assets/images');
-
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
