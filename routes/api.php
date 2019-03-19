@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 
 /** @var \Illuminate\Routing\Router $router */
+
+$router->get('search', [SearchController::class, 'index']);
 
 // API discoverability
 $router->get('/', function (Request $request) {

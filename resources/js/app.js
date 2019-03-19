@@ -39,3 +39,48 @@ $(window).keydown(function (e) {
         $('#global-search').focus();
     }
 });
+
+$('#global-search').easyAutocomplete({
+    url: query => `/api/search?q=${query}`,
+
+    getValue: 'name',
+
+    template: {
+        type: 'custom',
+        method: (value, item) => {
+            let template = '';
+
+            // Icon
+            if (item.icon) {
+                template += `<img src="/images/${item.icon}" alt="todo icon">`;
+            }
+
+            // Name
+            template += value;
+
+            // Type indicator
+            template += `<span class="float-right text-muted">${item.type}</span>`;
+
+            return template;
+        },
+    },
+
+    list: {
+        onChooseEvent: () => {
+            alert('todo :)');
+            const data = $('#global-search').getSelectedItemData();
+            console.log(data);
+            // redirect to slug
+        },
+        showAnimation: {
+            type: 'fade',
+            time: 400,
+        },
+        hideAnimation: {
+            type: 'fade',
+            time: 400,
+        },
+    },
+
+    requestDelay: 500,
+});
