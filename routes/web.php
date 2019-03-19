@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Routing\Router;
 
 /** @var Router $router */
@@ -8,7 +9,7 @@ use Illuminate\Routing\Router;
 Auth::routes(['verify' => true]);
 
 // Search
-//$router->get('search', [SearchController::class, 'index'])->name('search');
+$router->get('search', [SearchController::class, 'index'])->name('search');
 
 // Home
 $router->get('/', function () {
@@ -19,6 +20,9 @@ $router->get('/', function () {
 $router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
 
     // Achievements
+    $router->get('achievements', [AchievementsController::class, 'index'])->name('achievements');
+    $router->get('achievements/{slug}', [AchievementsController::class, 'show'])->name('achievements.show');
+
     // Chapters
     // Characters
     // Dlc
