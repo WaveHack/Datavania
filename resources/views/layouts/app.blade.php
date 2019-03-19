@@ -38,7 +38,7 @@
 <div id="app">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a href="{{ url('/') }}" class="navbar-brand">
+            <a href="{{ route('home') }}" class="navbar-brand">
                 <img src="/images/icon.png" alt="Datavania Icon" style="margin-bottom: 2px; vertical-align: middle;">
                 Datavania
             </a>
@@ -56,18 +56,23 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item dropdown {{ Route::is('db*') ? 'active' : null }}">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Database
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="{{ route('db.achievements') }}" class="dropdown-item {{ Route::is('db.achievements*') ? 'active' : null }}">Achievements</a>
+                            <a href="#" class="dropdown-item">Chapters</a>
+                            <a href="#" class="dropdown-item">Characters</a>
+                            <a href="#" class="dropdown-item">DLCs</a>
+                            <a href="#" class="dropdown-item">Items</a>
+                            <a href="#" class="dropdown-item">Monsters</a>
+                            <a href="#" class="dropdown-item">Music</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">Item Types</a>
+                        </div>
                     </li>
                 </ul>
-
-                {{--<form class="form-inline ml-auto">
-                    <input class="form-control mr-sm-2"
-                           type="search"
-                           placeholder="Search"
-                           aria-label="Search">
-                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>-->
-                </form>--}}
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav">
