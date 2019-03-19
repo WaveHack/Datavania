@@ -1,7 +1,34 @@
 <?php
 
-/** @var \Illuminate\Routing\Router $router */
+use Illuminate\Routing\Router;
 
+/** @var Router $router */
+
+// Authentication routes
+Auth::routes(['verify' => true]);
+
+// Search
+//$router->get('search', [SearchController::class, 'index'])->name('search');
+
+// Home
+$router->get('/', function () {
+    return view('pages.home');
+})->name('home');
+
+// Database
+$router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
+
+    // Achievements
+    // Chapters
+    // Characters
+    // Dlc
+    // Items
+    // Monsters
+    // Music
+
+});
+
+/*
 $router->get('/', function () {
     return view('welcome');
 
@@ -121,7 +148,4 @@ $router->get('/', function () {
 //    return view('welcome');
 
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+*/
