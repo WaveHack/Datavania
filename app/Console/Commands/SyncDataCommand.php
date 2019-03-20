@@ -33,13 +33,13 @@ class SyncDataCommand extends Command
                 'dlc',
             ]);
 
-//            $this->syncData('chapters', [
-//                'hidden_item' => 'item',
-//                'stage_music' => 'music',
-//                'boss_music' => 'music',
-//                'boss2_music' => 'music',
-//                'dlc',
-//            ]);
+            $this->syncData('chapters', [
+                'hidden_item' => 'item',
+                'stage_music' => 'music',
+                'boss_music' => 'music',
+                'boss2_music' => 'music',
+                'dlc',
+            ]);
 
 //            $this->syncData('monsters', [
 //                'item1' => 'item',
@@ -104,7 +104,11 @@ class SyncDataCommand extends Command
 
                 if ($relationData !== null) {
                     $relationModel = $relationFqcns[$field]::where('name', $relationData)
-                        ->firstOrFail();
+                        ->first();
+
+                    if ($relationModel === null) {
+                        throw new LogicException("Relation {$field} ({$relationFqcns[$field]}) with name '{$relationData}' not found for {$typeSingular} '{$modelData['name']}'");
+                    }
 
                     $relationData = (int)$relationModel->id;
                 }
