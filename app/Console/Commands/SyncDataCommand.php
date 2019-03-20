@@ -119,6 +119,7 @@ class SyncDataCommand extends Command
                 $modelData[$column] = $relationData;
             }
 
+            // Unset empty values instead of NULLing them, so we can use the database's default value
             foreach ($modelData as $column => $value) {
                 if (in_array($value, ['', null], true)) {
                     unset($modelData[$column]);
