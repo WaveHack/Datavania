@@ -5,6 +5,65 @@ use Illuminate\Routing\Router;
 
 /** @var Router $router */
 
+$router->get('test', function () {
+    $input = json_decode(file_get_contents(resource_path('data/item-types.json')));
+
+    $firstRow = array_first($input);
+
+    $columns = [];
+
+    foreach ($firstRow as $column => $value) {
+        // Skip Slug
+        if ($column === 'slug') {
+            continue;
+        }
+
+        // Add relations
+        if ($column === '__relations') {
+//            foreach ($value as $relation) {
+//                $columns[] = "*{$relation->slug}";
+//            }
+            continue;
+        }
+
+        $columns[] = $column;
+    }
+
+    $stream = fopen('php://memory', 'r+');
+
+    // Headers
+    fputcsv($stream, array_merge($columns/*, ['dlc']*/));
+    fwrite($stream, '<br>');
+
+    // Data
+    foreach ($input as $entity) {
+        $data = [];
+
+        // Prepare columns in order
+        foreach ($columns as $column) {
+            $data[$column] = null;
+        }
+
+        // Fill data
+        foreach ($columns as $column) {
+            $data[$column] = $entity->$column;
+        }
+
+        // DLC
+        if (isset($entity->__relations)) {
+            foreach ($entity->__relations as $relation) {
+                $data['dlc'] = $relation->slug;
+            }
+        }
+
+        fputcsv($stream, $data);
+        fwrite($stream, '<br>');
+    }
+
+    rewind($stream);
+    echo stream_get_contents($stream);
+});
+
 // Authentication routes
 Auth::routes(['verify' => true]);
 

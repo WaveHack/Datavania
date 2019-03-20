@@ -18,6 +18,7 @@ class CreateMusicTable extends Migration
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('youtube_id')->nullable();
+            $table->string('original_game');
             $table->unsignedInteger('dlc_id')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();

@@ -1,0 +1,2 @@
+item_type,name,description,rarity,is_starter,is_shoppable,value,stat_atk,stat_def,stat_str,stat_con,stat_int,stat_mnd,stat_lck,stat_hp,stat_mp,resistance_strike,resistance_slash,resistance_pierce,resistance_fire,resistance_ice,resistance_lightning,resistance_petrify,resistance_holy,resistance_darkness,resistance_curse,resistance_poison,attribute1,attribute2,is_consumable,is_consumed_over_time,dlc
+Dagger,Knife,Cheap pocket knife.,1,,,250,3,,,,,,,,,,,,,,,,,,,,,,,,

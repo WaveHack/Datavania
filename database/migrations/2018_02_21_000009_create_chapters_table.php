@@ -1,23 +1,11 @@
 <?php
 
-use App\Helpers\ChestHelper;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateChaptersTable extends Migration
 {
-    /** @var ChestHelper */
-    protected $chestHelper;
-
-    /**
-     * CreateChaptersTable constructor.
-     */
-    public function __construct()
-    {
-        $this->chestHelper = app(ChestHelper::class);
-    }
-
     /**
      * Run the migrations.
      *
@@ -30,11 +18,11 @@ class CreateChaptersTable extends Migration
             $table->string('slug')->unique();
             $table->integer('chapter');
             $table->string('name');
-
-            foreach ($this->chestHelper->getChestTypes() as $chestType) {
-                $table->integer('chests_' . $chestType)->default(0);
-            }
-
+            $table->integer('chests_blue')->default(0);
+            $table->integer('chests_brown')->default(0);
+            $table->integer('chests_green')->default(0);
+            $table->integer('chests_red')->default(0);
+            $table->integer('chests_purple')->default(0);
             $table->unsignedInteger('hidden_item_id')->nullable();
             $table->unsignedInteger('stage_music_id')->nullable();
             $table->unsignedInteger('boss_music_id')->nullable();
