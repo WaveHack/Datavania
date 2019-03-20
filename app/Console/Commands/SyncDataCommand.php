@@ -33,13 +33,13 @@ class SyncDataCommand extends Command
                 'dlc',
             ]);
 
-            $this->syncData('chapters', [
-                'hidden_item' => 'item',
-                'stage_music' => 'music',
-                'boss_music' => 'music',
-                'boss2_music' => 'music',
-                'dlc',
-            ]);
+//            $this->syncData('chapters', [
+//                'hidden_item' => 'item',
+//                'stage_music' => 'music',
+//                'boss_music' => 'music',
+//                'boss2_music' => 'music',
+//                'dlc',
+//            ]);
 
 //            $this->syncData('monsters', [
 //                'item1' => 'item',
@@ -93,7 +93,9 @@ class SyncDataCommand extends Command
 
         while (($row = fgetcsv($fp)) !== false) {
             $modelData = array_combine($headers, $row);
-            $slug = Str::slug($modelData['name']);
+            $slug = (isset($modelData['slug']) && !empty($modelData['slug']))
+                    ? $modelData['slug']
+                    : Str::slug($modelData['name']);
 
             $modelInstance = $modelFqcn::firstOrNew([
                 'slug' => $slug,
