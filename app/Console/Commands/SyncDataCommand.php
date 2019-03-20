@@ -21,8 +21,8 @@ class SyncDataCommand extends Command
     public function handle(): void
     {
         DB::transaction(function () {
-            $this->syncDLCs();
-//            $this->syncItemTypes();
+            $this->syncData('dlcs');
+            $this->syncData('item-types');
 //
 //            $this->syncAchievements();
 //            $this->syncChapters();
@@ -32,11 +32,6 @@ class SyncDataCommand extends Command
         });
 
         $this->info('Done');
-    }
-
-    protected function syncDLCs(): void
-    {
-        $this->syncData('dlcs');
     }
 
     protected function syncData(string $type, array $relations = []): void
@@ -50,7 +45,7 @@ class SyncDataCommand extends Command
         $this->info("Syncing {$type}", OutputInterface::VERBOSITY_VERBOSE);
 
         $typeSingular = Str::singular($type);
-        $modelClass = ucfirst($typeSingular);
+        $modelClass = implode('', array_map('ucfirst', explode('-', $typeSingular)));
         $modelFqcn = "App\\Models\\{$modelClass}";
 
         $fp = fopen($csvFilePath, 'rb');
