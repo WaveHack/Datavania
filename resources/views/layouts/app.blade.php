@@ -39,7 +39,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a href="{{ route('home') }}" class="navbar-brand">
-                <img src="/images/icon.png" alt="Datavania Icon" style="margin-bottom: 2px; vertical-align: middle;">
+                <img src="/images/icons/datavania.png" alt="Datavania Icon" style="margin-bottom: 2px; vertical-align: middle;">
                 Datavania
             </a>
 
