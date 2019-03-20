@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('slug')->unique();
             $table->unsignedInteger('item_type_id');
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->integer('rarity')->default(1);
             $table->boolean('is_starter')->default(false);
             $table->boolean('is_shoppable')->default(false);
