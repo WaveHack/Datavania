@@ -138,7 +138,7 @@ class SyncDataCommand extends Command
             $idsToKeep[] = $modelInstance->id;
 
             if ($modelInstance->wasRecentlyCreated) {
-                $this->line("Creating {$typeSingular}: {$modelData['name']}", null, OutputInterface::VERBOSITY_VERY_VERBOSE);
+                $this->line("Created {$typeSingular}: {$modelData['name']}", null, OutputInterface::VERBOSITY_VERY_VERBOSE);
 
                 $entitiesCreated++;
             }
