@@ -28,14 +28,19 @@ class SyncDataCommand extends Command
             $this->syncData('characters', ['dlc']);
             $this->syncData('music', ['dlc']);
 
+            $this->syncData('items', [
+                'item_type',
+                'dlc',
+            ]);
+
 //            $this->syncData('chapters', [
+//                'hidden_item' => 'item',
 //                'stage_music' => 'music',
 //                'boss_music' => 'music',
 //                'boss2_music' => 'music',
 //                'dlc',
 //            ]);
 
-//            $this->syncData('items', ['dlc']);
 //            $this->syncData('monsters', [
 //                'item1' => 'item',
 //                'item2' => 'item',
@@ -72,7 +77,7 @@ class SyncDataCommand extends Command
             $column = "{$relationField}_id";
             $relationFields[$relationField] = $column;
 
-            $relationClass = ucfirst($relationType);
+            $relationClass = implode('', array_map('ucfirst', explode('_', $relationType)));
             $relationFqcn = "App\\Models\\{$relationClass}";
 
             $relationFqcns[$relationField] = $relationFqcn;
@@ -98,8 +103,6 @@ class SyncDataCommand extends Command
                 $relationData = $modelData[$field] ?: null;
 
                 if ($relationData !== null) {
-                    // find related object
-
                     $relationModel = $relationFqcns[$field]::where('name', $relationData)
                         ->firstOrFail();
 
@@ -108,6 +111,12 @@ class SyncDataCommand extends Command
 
                 unset($modelData[$field]);
                 $modelData[$column] = $relationData;
+            }
+
+            foreach ($modelData as $column => $value) {
+                if (in_array($value, ['', null], true)) {
+                    unset($modelData[$column]);
+                }
             }
 
             $modelInstance->fill($modelData);
