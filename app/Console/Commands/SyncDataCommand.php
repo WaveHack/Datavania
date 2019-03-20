@@ -54,6 +54,7 @@ class SyncDataCommand extends Command
 
         $entitiesCreated = 0;
         $entitiesUpdated = 0;
+        $idsToKeep = [];
 
         while (($row = fgetcsv($fp)) !== false) {
             $modelData = array_combine($headers, $row);
@@ -72,6 +73,7 @@ class SyncDataCommand extends Command
             }
 
             $modelInstance->save();
+            $idsToKeep[] = $modelInstance->id;
 
             if ($modelInstance->wasRecentlyCreated) {
                 $this->line("Creating {$typeSingular}: {$modelData['name']}", null, OutputInterface::VERBOSITY_VERY_VERBOSE);
@@ -82,18 +84,19 @@ class SyncDataCommand extends Command
 
         fclose($fp);
 
-        $infoStringParts = [];
+        $entitiesDeleted = $modelFqcn::whereNotIn('id', $idsToKeep)
+            ->delete();
 
-        if ($entitiesCreated !== 0) {
-            $infoStringParts[] = sprintf('created %d %s', $entitiesCreated, Str::plural($typeSingular, $entitiesCreated));
-        }
-
-        if ($entitiesUpdated !== 0) {
-            $infoStringParts[] = sprintf('updated %d %s', $entitiesUpdated, Str::plural($typeSingular, $entitiesUpdated));
-        }
-
-        if (!empty($infoStringParts)) {
-            $this->info(ucfirst(implode(' and ', $infoStringParts)), OutputInterface::VERBOSITY_VERBOSE);
+        if (($entitiesCreated !== 0) || ($entitiesUpdated !== 0) || ($entitiesDeleted !== 0)) {
+            $this->info(
+                "{$type}: " .
+                rtrim(
+                    (($entitiesCreated !== 0) ? "{$entitiesCreated} created, " : null) .
+                    (($entitiesUpdated !== 0) ? "{$entitiesUpdated} updated, " : null) .
+                    (($entitiesDeleted !== 0) ? "{$entitiesDeleted} deleted, " : null)
+                    , ', ')
+                , OutputInterface::VERBOSITY_VERBOSE
+            );
         }
     }
 }
