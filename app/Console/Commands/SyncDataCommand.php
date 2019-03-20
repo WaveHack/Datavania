@@ -26,7 +26,7 @@ class SyncDataCommand extends Command
             $this->syncData('item-types');
 
             $this->syncData('characters', ['dlc']);
-//            $this->syncData('music', ['dlc']);
+            $this->syncData('music', ['dlc']);
 
 //            $this->syncData('chapters', [
 //                'stage_music' => 'music',
