@@ -23,8 +23,8 @@ class SyncDataCommand extends Command
         DB::transaction(function () {
             $this->syncData('dlcs');
             $this->syncData('item-types');
-//
-//            $this->syncAchievements();
+            $this->syncData('achievements');
+
 //            $this->syncChapters();
 //            $this->syncCharacters();
 //            $this->syncItems();
@@ -89,7 +89,7 @@ class SyncDataCommand extends Command
 
         if (($entitiesCreated !== 0) || ($entitiesUpdated !== 0) || ($entitiesDeleted !== 0)) {
             $this->info(
-                "{$type}: " .
+                ucfirst($type) . ': ' .
                 rtrim(
                     (($entitiesCreated !== 0) ? "{$entitiesCreated} created, " : null) .
                     (($entitiesUpdated !== 0) ? "{$entitiesUpdated} updated, " : null) .
