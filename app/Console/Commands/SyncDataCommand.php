@@ -21,14 +21,27 @@ class SyncDataCommand extends Command
     public function handle(): void
     {
         DB::transaction(function () {
+            $this->syncData('achievements');
             $this->syncData('dlcs');
             $this->syncData('item-types');
-            $this->syncData('achievements');
 
-//            $this->syncChapters();
-//            $this->syncCharacters();
-//            $this->syncItems();
-//            $this->syncMusic();
+            $this->syncData('characters', ['dlc']);
+//            $this->syncData('music', ['dlc']);
+
+//            $this->syncData('chapters', [
+//                'stage_music' => 'music',
+//                'boss_music' => 'music',
+//                'boss2_music' => 'music',
+//                'dlc',
+//            ]);
+
+//            $this->syncData('items', ['dlc']);
+//            $this->syncData('monsters', [
+//                'item1' => 'item',
+//                'item2' => 'item',
+//                'soul' => 'item',
+//                'dlc',
+//            ]);
         });
 
         $this->info('Done');
@@ -48,6 +61,23 @@ class SyncDataCommand extends Command
         $modelClass = implode('', array_map('ucfirst', explode('-', $typeSingular)));
         $modelFqcn = "App\\Models\\{$modelClass}";
 
+        $relationFields = [];
+        $relationFqcns = [];
+
+        foreach ($relations as $relationField => $relationType) {
+            if (is_int($relationField)) {
+                $relationField = $relationType;
+            }
+
+            $column = "{$relationField}_id";
+            $relationFields[$relationField] = $column;
+
+            $relationClass = ucfirst($relationType);
+            $relationFqcn = "App\\Models\\{$relationClass}";
+
+            $relationFqcns[$relationField] = $relationFqcn;
+        }
+
         $fp = fopen($csvFilePath, 'rb');
 
         $headers = fgetcsv($fp);
@@ -63,6 +93,22 @@ class SyncDataCommand extends Command
             $modelInstance = $modelFqcn::firstOrNew([
                 'slug' => $slug,
             ]);
+
+            foreach ($relationFields as $field => $column) {
+                $relationData = $modelData[$field] ?: null;
+
+                if ($relationData !== null) {
+                    // find related object
+
+                    $relationModel = $relationFqcns[$field]::where('name', $relationData)
+                        ->firstOrFail();
+
+                    $relationData = (int)$relationModel->id;
+                }
+
+                unset($modelData[$field]);
+                $modelData[$column] = $relationData;
+            }
 
             $modelInstance->fill($modelData);
 
