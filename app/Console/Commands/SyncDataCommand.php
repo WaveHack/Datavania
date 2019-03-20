@@ -33,13 +33,13 @@ class SyncDataCommand extends Command
                 'dlc',
             ]);
 
-//            $this->syncData('chapters', [
-//                'hidden_item' => 'item',
-//                'stage_music' => 'music',
-//                'boss_music' => 'music',
-//                'boss2_music' => 'music',
-//                'dlc',
-//            ]);
+            $this->syncData('chapters', [
+                'hidden_item' => 'item',
+                'stage_music' => 'music',
+                'boss_music' => 'music',
+                'boss2_music' => 'music',
+                'dlc',
+            ]);
 
 //            $this->syncData('monsters', [
 //                'item1' => 'item',
