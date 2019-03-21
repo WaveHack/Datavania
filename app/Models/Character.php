@@ -28,9 +28,4 @@ class Character extends AbstractModel
             'name' => $this->name,
         ];
     }
-
-    public function getScoutKey()
-    {
-        return $this->slug;
-    }
 }
