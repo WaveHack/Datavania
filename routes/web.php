@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AchievementsController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Routing\Router;
 
