@@ -6,6 +6,9 @@ use Illuminate\Routing\Router;
 /** @var Router $router */
 
 $router->get('test', function () {
+
+    return \App\Models\Character::search('som')->get();
+
     $input = json_decode(file_get_contents(resource_path('data/item-types.json')));
 
     $firstRow = array_first($input);
