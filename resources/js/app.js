@@ -40,7 +40,8 @@ $(window).keydown(function (e) {
     }
 });
 
-$('#global-search').easyAutocomplete({
+
+/*$('#global-search').easyAutocomplete({
     url: query => `/api/search?q=${query}`,
 
     getValue: 'name',
@@ -83,4 +84,4 @@ $('#global-search').easyAutocomplete({
     },
 
     requestDelay: 500,
-});
+});*/
