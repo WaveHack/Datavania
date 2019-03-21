@@ -56,3 +56,11 @@ try {
 // });
 
 // require('easy-autocomplete');
+
+window.algoliasearch = require('algoliasearch');
+require('autocomplete.js/index_jquery');
+
+window.algolia = algoliasearch(
+    process.env.MIX_ALGOLIA_APP_ID,
+    process.env.MIX_ALGOLIA_API_KEY
+);

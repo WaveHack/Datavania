@@ -40,48 +40,32 @@ $(window).keydown(function (e) {
     }
 });
 
+// Algolia
+const index = algolia.initIndex('characters');
 
-/*$('#global-search').easyAutocomplete({
-    url: query => `/api/search?q=${query}`,
+$('#global-search').autocomplete({/*debug: true*/}, [
+    {
+        source: $.fn.autocomplete.sources.hits(index, {hitsPerPage: 5}),
+        displayKey: 'name',
+        templates: {
+            suggestion: data => {
+                let template = '';
 
-    getValue: 'name',
+                // Icon
+                // if (data.icon) {
+                //     template += `<img src="/images/${data.icon} alt="todo">`;
+                // }
 
-    template: {
-        type: 'custom',
-        method: (value, item) => {
-            let template = '';
+                // Name
+                template += data._highlightResult.name.value;
 
-            // Icon
-            if (item.icon) {
-                template += `<img src="/images/${item.icon}" alt="todo icon">`;
+                // Type
+                template += `<span class="float-right text-muted">Character</span>`;
+
+                return template;
             }
-
-            // Name
-            template += value;
-
-            // Type indicator
-            template += `<span class="float-right text-muted">${item.type}</span>`;
-
-            return template;
-        },
-    },
-
-    list: {
-        onChooseEvent: () => {
-            alert('todo :)');
-            const data = $('#global-search').getSelectedItemData();
-            console.log(data);
-            // redirect to slug
-        },
-        showAnimation: {
-            type: 'fade',
-            time: 400,
-        },
-        hideAnimation: {
-            type: 'fade',
-            time: 400,
-        },
-    },
-
-    requestDelay: 500,
-});*/
+        }
+    }
+]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+    console.log(event, suggestion, dataset, context);
+});
