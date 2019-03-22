@@ -1,13 +1,10 @@
-// Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-// Variables
 @import 'variables';
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
-// GitHub Corner
-@import 'github-corner';
-// Algolia
+
 @import 'algolia';
+@import 'github-corner';
+@import 'sprites';
 
 body {
   background: #E5E5E5;

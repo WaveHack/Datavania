@@ -1,0 +1,21 @@
+@import '../build/spritesheet-items';
+
+.sprite {
+  display: block;
+  // todo: image scaling for sprite-big: https://builtvisible.com/image-scaling-in-css/
+}
+
+.sprite-item {
+  background-image: url('/images/spritesheets/items.png');
+  // todo: set sprite-position to '?' icon for not-found images
+  width: 16px;
+  height: 16px;
+}
+
+@each $sprite in $spritesheet-sprites {
+  $sprite-name: nth($sprite, 10);
+
+  .sprite-item-#{$sprite-name} {
+    @include sprite-position($sprite);
+  }
+}

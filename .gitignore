@@ -4,9 +4,11 @@
 /node_modules
 /public/css
 /public/hot
+/public/images/spritesheets
 /public/js
 /public/storage
 /public/mix-manifest.json
+/resources/build/
 /resources/data/.~lock.*.csv#
 /storage/*.key
 /vendor
