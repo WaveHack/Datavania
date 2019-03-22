@@ -43,18 +43,31 @@ $(window).keydown(function (e) {
 // Algolia
 const index = algolia.initIndex('characters');
 
-$('#global-search').autocomplete({/*debug: true*/}, [
+$('#global-search').autocomplete({debug: true}, [
     {
         source: $.fn.autocomplete.sources.hits(index, {hitsPerPage: 5}),
         displayKey: 'name',
         templates: {
             suggestion: data => {
+
+                return `
+                    <div style="display: flex;">
+                        <div style="margin-right: 4px; padding-top: 3px;">
+                            <i class="sprite sprite-item sprite-item-${data.slug}"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            ${data._highlightResult.name.value}
+                        </div>
+                        <div class="text-muted">
+                            Character
+                        </div>
+                    </div>
+                `;
+
                 let template = '';
 
                 // Icon
-                // if (data.icon) {
-                //     template += `<img src="/images/${data.icon} alt="todo">`;
-                // }
+                template += `<i class="sprite sprite-item sprite-item-${data.slug}"></i>`;
 
                 // Name
                 template += data._highlightResult.name.value;

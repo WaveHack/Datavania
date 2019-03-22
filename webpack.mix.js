@@ -5,7 +5,7 @@ mix.webpackConfig({
     plugins: [
         new Spritesmith({
             src: {
-                cwd: path.resolve(__dirname, 'resources/images/icons'),
+                cwd: path.resolve(__dirname, 'resources/images/sprites'),
                 glob: '**/*.png',
             },
             target: {
