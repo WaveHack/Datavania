@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
+
 class Chapter extends AbstractModel
 {
+    use Searchable;
+
     protected $casts = [
         'chapter' => 'int',
         'chests_blue' => 'int',
@@ -36,5 +40,14 @@ class Chapter extends AbstractModel
     public function stageMusic()
     {
         return $this->belongsTo(Music::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'slug' => $this->slug,
+            'name' => $this->name,
+            'chapter' => $this->chapter,
+        ];
     }
 }

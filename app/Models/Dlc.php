@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
+
 class Dlc extends AbstractModel
 {
+    use Searchable;
+
     protected $casts = [
         'msp' => 'int',
     ];
@@ -27,5 +31,13 @@ class Dlc extends AbstractModel
     public function music()
     {
         return $this->hasMany(Music::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'slug' => $this->slug,
+            'name' => $this->name,
+        ];
     }
 }

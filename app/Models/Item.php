@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
+
 class Item extends AbstractModel
 {
+    use Searchable;
+
     protected $casts = [
         'rarity' => 'int',
         'is_starter' => 'bool',
@@ -36,5 +40,14 @@ class Item extends AbstractModel
     public function itemType()
     {
         return $this->belongsTo(ItemType::class);
+    }
+
+    public function toSearchableArray()
+    {
+        return [
+            'slug' => $this->slug,
+            'name' => $this->name,
+            'type' => $this->itemType->name,
+        ];
     }
 }
