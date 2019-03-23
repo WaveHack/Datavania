@@ -8,7 +8,7 @@ use Illuminate\Routing\Router;
 /** @var Router $router */
 
 // Authentication routes
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
 // Search
 $router->get('search', [SearchController::class, 'index'])->name('search');
