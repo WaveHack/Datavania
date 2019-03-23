@@ -42,6 +42,11 @@ class Item extends AbstractModel
         return $this->belongsTo(ItemType::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function searchableAs()
     {
         return 'search';

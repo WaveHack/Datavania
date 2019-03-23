@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AchievementsController;
+use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Routing\Router;
 
@@ -27,7 +28,11 @@ $router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
     // Chapters
     // Characters
     // Dlc
+
     // Items
+    $router->get('items', [ItemsController::class, 'index'])->name('items');
+    $router->get('item/{slug}', [ItemsController::class, 'show'])->name('items.show');
+
     // Monsters
     // Music
 
