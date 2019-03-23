@@ -78,7 +78,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                @if (0)
+                @if (app()->environment() === 'local')
                     <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
