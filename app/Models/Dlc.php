@@ -33,11 +33,19 @@ class Dlc extends AbstractModel
         return $this->hasMany(Music::class);
     }
 
+    public function searchableAs()
+    {
+        return 'search';
+    }
+
     public function toSearchableArray()
     {
         return [
             'slug' => $this->slug,
             'name' => $this->name,
+            'type' => 'DLC',
+            'typeSlug' => 'dlc',
+            'iconClass' => 'sprite sprite-dlc',
         ];
     }
 }

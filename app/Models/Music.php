@@ -15,11 +15,19 @@ class Music extends AbstractModel
         return $this->belongsTo(Dlc::class);
     }
 
+    public function searchableAs()
+    {
+        return 'search';
+    }
+
     public function toSearchableArray()
     {
         return [
             'slug' => $this->slug,
             'name' => $this->name,
+            'type' => 'Music',
+            'typeSlug' => 'music',
+            'iconClass' => 'sprite sprite-music',
         ];
     }
 }

@@ -21,11 +21,19 @@ class Character extends AbstractModel
         return $this->belongsTo(Dlc::class);
     }
 
+    public function searchableAs()
+    {
+        return 'search';
+    }
+
     public function toSearchableArray()
     {
         return [
             'slug' => $this->slug,
             'name' => $this->name,
+            'type' => 'Character',
+            'typeSlug' => 'character',
+            'iconClass' => "sprite sprite-character sprite-character-{$this->slug}",
         ];
     }
 }

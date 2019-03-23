@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -41,44 +40,32 @@ $(window).keydown(function (e) {
 });
 
 // Algolia
-const index = algolia.initIndex('characters');
+const searchIndex = algolia.initIndex('search');
 
-$('#global-search').autocomplete({debug: true}, [
-    {
-        source: $.fn.autocomplete.sources.hits(index, {hitsPerPage: 5}),
-        displayKey: 'name',
-        templates: {
-            suggestion: data => {
+$('#global-search').autocomplete({debug: true}, [{
 
-                return `
-                    <div style="display: flex;">
-                        <div style="margin-right: 4px; padding-top: 3px;">
-                            <i class="sprite sprite-item sprite-item-${data.slug}"></i>
-                        </div>
-                        <div style="flex-grow: 1;">
-                            ${data._highlightResult.name.value}
-                        </div>
-                        <div class="text-muted">
-                            Character
-                        </div>
+    source: $.fn.autocomplete.sources.hits(searchIndex, {hitsPerPage: 10}),
+
+    displayKey: 'name',
+
+    templates: {
+
+        suggestion: data => `
+                <div style="display: flex;">
+                    <div style="margin-right: 4px; padding-top: 3px;">
+                        <i class="${data.iconClass}"></i>
                     </div>
-                `;
+                    <div style="flex-grow: 1;">
+                        ${data._highlightResult.name.value}
+                    </div>
+                    <div class="text-muted">
+                        ${data._highlightResult.type.value}
+                    </div>
+                </div>
+            `,
 
-                let template = '';
+    },
 
-                // Icon
-                template += `<i class="sprite sprite-item sprite-item-${data.slug}"></i>`;
-
-                // Name
-                template += data._highlightResult.name.value;
-
-                // Type
-                template += `<span class="float-right text-muted">Character</span>`;
-
-                return template;
-            }
-        }
-    }
-]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+}]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
     console.log(event, suggestion, dataset, context);
 });

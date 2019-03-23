@@ -42,12 +42,19 @@ class Item extends AbstractModel
         return $this->belongsTo(ItemType::class);
     }
 
+    public function searchableAs()
+    {
+        return 'search';
+    }
+
     public function toSearchableArray()
     {
         return [
             'slug' => $this->slug,
             'name' => $this->name,
             'type' => $this->itemType->name,
+            'typeSlug' => 'item',
+            'iconClass' => "sprite sprite-item sprite-item-{$this->slug}",
         ];
     }
 }

@@ -42,12 +42,19 @@ class Chapter extends AbstractModel
         return $this->belongsTo(Music::class);
     }
 
+    public function searchableAs()
+    {
+        return 'search';
+    }
+
     public function toSearchableArray()
     {
         return [
             'slug' => $this->slug,
-            'name' => $this->name,
-            'chapter' => $this->chapter,
+            'name' => "{$this->chapter}: {$this->name}",
+            'type' => 'Chapter',
+            'typeSlug' => 'chapter',
+            'iconClass' => 'sprite sprite-chapter',
         ];
     }
 }
