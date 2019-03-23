@@ -3,23 +3,39 @@
 return [
 
     'entities' => [
-
         'item' => [
-            'list' => \App\Sharp\ItemEntityList::class,
+            'list' => \App\Sharp\ItemSharpList::class,
+            'form' => \App\Sharp\ItemSharpForm::class,
+            'validator' => null,
+            'policy' => null,
+        ],
+        'item-type' => [
+            'list' => \App\Sharp\ItemTypeSharpList::class,
             'form' => null,
             'validator' => null,
             'policy' => null,
         ],
-
     ],
 
     'menu' => [
-
         [
-            'label' => 'Items',
-            'entity' => 'item',
+            'label' => 'Database',
+            'entities' => [
+                [
+                    'label' => 'Items',
+                    'entity' => 'item',
+                ],
+            ],
         ],
-
+        [
+            'label' => 'Misc',
+            'entities' => [
+                [
+                    'label' => 'Item Types',
+                    'entity' => 'item-type',
+                ],
+                // users
+            ],
+        ],
     ],
-
 ];

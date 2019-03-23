@@ -7,13 +7,8 @@ use Code16\Sharp\EntityList\SharpEntityList;
 use Code16\Sharp\EntityList\EntityListQueryParams;
 use Code16\Sharp\EntityList\Containers\EntityListDataContainer;
 
-class ItemEntityList extends SharpEntityList
+class ItemSharpList extends SharpEntityList
 {
-    /**
-     * Build list containers using ->addDataContainer()
-     *
-     * @return void
-     */
     public function buildListDataContainers()
     {
         $this->addDataContainer(
@@ -31,12 +26,6 @@ class ItemEntityList extends SharpEntityList
         );
     }
 
-    /**
-     * Build list layout using ->addColumn()
-     *
-     * @return void
-     */
-
     public function buildListLayout()
     {
         $this->addColumn('name', 6)
@@ -44,25 +33,14 @@ class ItemEntityList extends SharpEntityList
             ->addColumn('itemType:name', 3);
     }
 
-    /**
-     * Build list config
-     *
-     * @return void
-     */
     public function buildListConfig()
     {
-        $this->setInstanceIdAttribute('id')// slug
-        ->setSearchable()
+        $this->setInstanceIdAttribute('id')
+            ->setSearchable()
             ->setDefaultSort('name', 'asc')
             ->setPaginated();
     }
 
-    /**
-     * Retrieve all rows data as array.
-     *
-     * @param EntityListQueryParams $params
-     * @return array
-     */
     public function getListData(EntityListQueryParams $params)
     {
         $items = Item::query()
