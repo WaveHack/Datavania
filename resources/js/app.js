@@ -64,8 +64,22 @@ $('#global-search').autocomplete({debug: true}, [{
                 </div>
             `,
 
+        footer: `
+            <div class="autocomplete-footer" style="border-top: 1px solid #999; padding: 5px 4px;">
+                <div class="autocomplete-footer-branding text-center">
+                    <small class="text-muted">
+                        Powered by
+                        <a href="https://www.algolia.com" target="_blank" class="algolia-powered-by-link" title="Algolia">
+                            <img class="algolia-logo" src="https://www.algolia.com/assets/algolia128x40.png" alt="Algolia" style="height: 1em;">                       
+                        </a>                
+                    </small>        
+                </div>
+            </span>
+        `,
+
     },
 
 }]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
-    console.log(event, suggestion, dataset, context);
+    const url = `/db/${suggestion.typeSlug}/${suggestion.slug}`;
+    $(location).attr('href', url);
 });
