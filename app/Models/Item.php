@@ -49,12 +49,26 @@ class Item extends AbstractModel
 
     public function toSearchableArray()
     {
+        $useTypeSlugForIcon = in_array($this->itemType->slug, [
+            'weapon-glyph',
+            'bullet-soul',
+            'dark-magic',
+            'bound-spell',
+            'glyph-spell',
+            'guardian-soul',
+            'enchantment-soul',
+            'martial-arts',
+            'personal-action',
+        ], true);
+
+        $iconClass = ($useTypeSlugForIcon ? $this->itemType->slug : $this->slug);
+
         return [
             'slug' => $this->slug,
             'name' => $this->name,
             'type' => $this->itemType->name,
             'typeSlug' => 'item',
-            'iconClass' => "sprite sprite-item sprite-item-{$this->slug}",
+            'iconClass' => "sprite sprite-item sprite-item-{$iconClass}",
         ];
     }
 }

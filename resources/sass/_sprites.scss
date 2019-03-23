@@ -7,7 +7,7 @@
 
 .sprite-item {
   background-image: url('/images/spritesheets/items.png');
-  // todo: set sprite-position to '?' icon for not-found images
+  @include sprite-position($not-available);
   width: 16px;
   height: 16px;
 }
