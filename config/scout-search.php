@@ -79,7 +79,7 @@ return [
     |
     */
 
-    'attributesForFaceting' => ['type'],
+    'attributesForFaceting' => null,
 
     /*
     |--------------------------------------------------------------------------
