@@ -12,6 +12,10 @@
   background-color: #fff;
   border: 1px solid #999;
   border-top: none;
+
+  min-width: 300px;
+  left: auto !important;
+  right: 0 !important;
 }
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
   cursor: pointer;

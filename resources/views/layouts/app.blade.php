@@ -111,6 +111,19 @@
                         </li>
                     @endguest
                 </ul>
+
+                <!-- Navbar Search -->
+                @if (!Route::is('home'))
+                    <form action="{{ route('search') }}" method="get" class="form-inline">
+                        <input type="search"
+                               name="q"
+                               class="form-control"
+                               id="global-search"
+                               autocomplete="off"
+                               placeholder="Search"
+                               aria-label="search">
+                    </form>
+                @endif
             </div>
         </nav>
     </header>
