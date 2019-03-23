@@ -4,13 +4,13 @@ namespace App\Sharp;
 
 use App\Models\Item;
 use App\Models\ItemType;
-use Code16\Sharp\Form\Fields\SharpFormAutocompleteField;
-use Code16\Sharp\Form\Fields\SharpFormAutocompleteListField;
-use Code16\Sharp\Form\Fields\SharpFormSelectField;
-use Code16\Sharp\Form\SharpForm;
-use Code16\Sharp\Form\Layout\FormLayoutColumn;
-use Code16\Sharp\Form\Fields\SharpFormTextField;
 use Code16\Sharp\Form\Eloquent\WithSharpFormEloquentUpdater;
+use Code16\Sharp\Form\Fields\SharpFormAutocompleteField;
+use Code16\Sharp\Form\Fields\SharpFormSelectField;
+use Code16\Sharp\Form\Fields\SharpFormTextareaField;
+use Code16\Sharp\Form\Fields\SharpFormTextField;
+use Code16\Sharp\Form\Layout\FormLayoutColumn;
+use Code16\Sharp\Form\SharpForm;
 
 class ItemSharpForm extends SharpForm
 {
@@ -22,14 +22,14 @@ class ItemSharpForm extends SharpForm
             SharpFormAutocompleteField::make('item_type_id', 'local')
                 ->setLabel('Item Type')
                 ->setLocalSearchKeys(['name'])
-                ->setLocalValues(ItemType::all())
+                ->setLocalValues(ItemType::all()->toArray())
                 ->setListItemInlineTemplate('{{name}}')
                 ->setResultItemInlineTemplate('{{name}}')
         )->addField(
             SharpFormTextField::make('name')
                 ->setLabel('Name')
         )->addField(
-            SharpFormTextField::make('description')
+            SharpFormTextareaField::make('description')
                 ->setLabel('Description')
         )->addField(
             SharpFormSelectField::make(
@@ -39,17 +39,19 @@ class ItemSharpForm extends SharpForm
                 ->setLabel('Rarity')
                 ->setDisplayAsDropdown()
         );
-        // type
-        // name
-        // description
-        // rarity
     }
 
     public function buildFormLayout()
     {
         $this->addColumn(6, function (FormLayoutColumn $column) {
+
             $column->withSingleField('name')
-                ->withFields('item_type_id|6', 'rarity|6');
+                ->withFields('rarity|6', 'item_type_id|6');
+
+        })->addColumn(6, function (FormLayoutColumn $column) {
+
+            $column->withSingleField('description');
+
         });
     }
 
