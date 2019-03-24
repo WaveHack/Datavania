@@ -79,6 +79,8 @@ $('#global-search').autocomplete({debug: true}, [{
 
     },
 
+    debounce: 200,
+
 }]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
     const url = `/db/${suggestion.typeSlug}/${suggestion.slug}`;
     $(location).attr('href', url);
