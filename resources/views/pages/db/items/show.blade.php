@@ -28,11 +28,7 @@
             <div class="col-md-4">
 
                 {{-- Stats --}}
-                <div class="row">
-                    <div class="col-md-12">
-                        <strong>Stats</strong>
-                    </div>
-                </div>
+                <h5>Stats</h5>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row {{ $item->stat_atk === 0 ? 'text-muted' : null }}">
@@ -67,37 +63,81 @@
                         </div>
                     </div>
                 </div>
-
-                {{-- Resistances --}}
                 <div class="row mt-3">
-                    <div class="col-md-12">
-                        <strong>Resistances</strong>
+                    <div class="col-md-6">
+                        <div class="row {{ $item->stat_hp === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">HP</div>
+                            <div class="col-md-6">{{ $item->stat_hp }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row {{ $item->stat_mp === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">MP</div>
+                            <div class="col-md-6">{{ $item->stat_mp }}</div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="row {{ $item->resistance_strike === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">STR</div>
-                            <div class="col-md-6 text-right">{{ $item->resistance_strike }}</div>
 
+                {{-- Resistances --}}
+                <h5 class="mt-4">Resistances</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Physical</strong>
+
+                        <div class="row {{ $item->resistance_strike === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Strike</div>
+                            <div class="col-md-6">{{ $item->resistance_strike }}</div>
                         </div>
-                        str: {{ $item->resistance_strike }}<br>
-                        slh: {{ $item->resistance_slash }}<br>
-                        pie: {{ $item->resistance_pierce }}
+                        <div class="row {{ $item->resistance_slash === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Slash</div>
+                            <div class="col-md-6">{{ $item->resistance_slash }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_pierce === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Pierce</div>
+                            <div class="col-md-6">{{ $item->resistance_pierce }}</div>
+                        </div>
+
+                        <div class="mt-3">
+                            <strong>Status</strong>
+                        </div>
+
+                        <div class="row {{ $item->resistance_petrify === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Petrify</div>
+                            <div class="col-md-6">{{ $item->resistance_petrify }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_curse === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Curse</div>
+                            <div class="col-md-6">{{ $item->resistance_curse }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_poison === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Poison</div>
+                            <div class="col-md-6">{{ $item->resistance_poison }}</div>
+                        </div>
+
                     </div>
-                    <div class="col-md-3">
-                        fir: {{ $item->resistance_fire }}<br>
-                        ice: {{ $item->resistance_ice }}<br>
-                        lng: {{ $item->resistance_lightning }}
-                    </div>
-                    <div class="col-md-3">
-                        pet: {{ $item->resistance_petrify }}<br>
-                        hol: {{ $item->resistance_holy }}<br>
-                        dar: {{ $item->resistance_darkness }}
-                    </div>
-                    <div class="col-md-3">
-                        cur: {{ $item->resistance_curse }}<br>
-                        poi: {{ $item->resistance_poison }}
+                    <div class="col-md-6">
+                        <strong>Magical</strong>
+
+                        <div class="row {{ $item->resistance_fire === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Fire</div>
+                            <div class="col-md-6">{{ $item->resistance_fire }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_ice === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Ice</div>
+                            <div class="col-md-6">{{ $item->resistance_ice }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_lightning === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Lightning</div>
+                            <div class="col-md-6">{{ $item->resistance_lightning }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_holy === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Holy</div>
+                            <div class="col-md-6">{{ $item->resistance_holy }}</div>
+                        </div>
+                        <div class="row {{ $item->resistance_darkness === 0 ? 'text-muted' : null }}">
+                            <div class="col-md-6">Darkness</div>
+                            <div class="col-md-6">{{ $item->resistance_darkness }}</div>
+                        </div>
                     </div>
                 </div>
 
