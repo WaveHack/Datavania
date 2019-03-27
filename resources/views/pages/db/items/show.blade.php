@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php
-    function stat_row(\App\Models\Item $item, string $stat, string $label) {
+    function stat_row(\App\Models\Item $item, string $stat, string $label): string {
         $statValue = (int)$item->$stat;
         return sprintf('<div class="row">
                             <div class="col-md-6">
