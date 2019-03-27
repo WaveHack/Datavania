@@ -1,5 +1,24 @@
 @extends('layouts.app')
 
+@php
+    function stat_row(\App\Models\Item $item, string $stat, string $label) {
+        $statValue = (int)$item->$stat;
+        return sprintf('<div class="row">
+                            <div class="col-md-6">
+                                <span class="%s">%s</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="text-right %s">%s</span>
+                            </div>
+                        </div>',
+            (($statValue === 0) ? 'text-muted' : null),
+            $label,
+            (($statValue < 0) ? 'text-danger' : (($statValue === 0) ? 'text-muted' : null)),
+            number_format($statValue)
+        );
+    }
+@endphp
+
 @section('content')
     <div class="container">
 
@@ -26,55 +45,27 @@
 
         <div class="row mt-4">
             <div class="col-md-4">
-
                 {{-- Stats --}}
                 <h5>Stats</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="row {{ $item->stat_atk === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">ATK</div>
-                            <div class="col-md-6">{{ $item->stat_atk }}</div>
-                        </div>
-                        <div class="row {{ $item->stat_str === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">STR</div>
-                            <div class="col-md-6">{{ $item->stat_str }}</div>
-                        </div>
-                        <div class="row {{ $item->stat_int === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">INT</div>
-                            <div class="col-md-6">{{ $item->stat_int }}</div>
-                        </div>
-                        <div class="row {{ $item->stat_lck === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">LCK</div>
-                            <div class="col-md-6">{{ $item->stat_lck }}</div>
-                        </div>
+                        {!! stat_row($item, 'stat_atk', 'Atk') !!}
+                        {!! stat_row($item, 'stat_str', 'Str') !!}
+                        {!! stat_row($item, 'stat_int', 'Int') !!}
+                        {!! stat_row($item, 'stat_lck', 'Lck') !!}
                     </div>
                     <div class="col-md-6">
-                        <div class="row {{ $item->stat_def === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">DEF</div>
-                            <div class="col-md-6">{{ $item->stat_def }}</div>
-                        </div>
-                        <div class="row {{ $item->stat_con === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">CON</div>
-                            <div class="col-md-6">{{ $item->stat_con }}</div>
-                        </div>
-                        <div class="row {{ $item->stat_mnd === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">MND</div>
-                            <div class="col-md-6">{{ $item->stat_mnd }}</div>
-                        </div>
+                        {!! stat_row($item, 'stat_def', 'Def') !!}
+                        {!! stat_row($item, 'stat_con', 'Con') !!}
+                        {!! stat_row($item, 'stat_mnd', 'Mnd') !!}
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">
-                        <div class="row {{ $item->stat_hp === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">HP</div>
-                            <div class="col-md-6">{{ $item->stat_hp }}</div>
-                        </div>
+                        {!! stat_row($item, 'stat_hp', 'HP') !!}
                     </div>
                     <div class="col-md-6">
-                        <div class="row {{ $item->stat_mp === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">MP</div>
-                            <div class="col-md-6">{{ $item->stat_mp }}</div>
-                        </div>
+                        {!! stat_row($item, 'stat_mp', 'MP') !!}
                     </div>
                 </div>
 
@@ -83,61 +74,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <strong>Physical</strong>
-
-                        <div class="row {{ $item->resistance_strike === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Strike</div>
-                            <div class="col-md-6">{{ $item->resistance_strike }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_slash === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Slash</div>
-                            <div class="col-md-6">{{ $item->resistance_slash }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_pierce === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Pierce</div>
-                            <div class="col-md-6">{{ $item->resistance_pierce }}</div>
-                        </div>
+                        {!! stat_row($item, 'resistance_strike', 'Strike') !!}
+                        {!! stat_row($item, 'resistance_slash', 'Slash') !!}
+                        {!! stat_row($item, 'resistance_pierce', 'Pierce') !!}
 
                         <div class="mt-3">
                             <strong>Status</strong>
                         </div>
-
-                        <div class="row {{ $item->resistance_petrify === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Petrify</div>
-                            <div class="col-md-6">{{ $item->resistance_petrify }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_curse === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Curse</div>
-                            <div class="col-md-6">{{ $item->resistance_curse }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_poison === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Poison</div>
-                            <div class="col-md-6">{{ $item->resistance_poison }}</div>
-                        </div>
-
+                        {!! stat_row($item, 'resistance_petrify', 'Petrify') !!}
+                        {!! stat_row($item, 'resistance_curse', 'Curse') !!}
+                        {!! stat_row($item, 'resistance_poison', 'Poison') !!}
                     </div>
                     <div class="col-md-6">
                         <strong>Magical</strong>
-
-                        <div class="row {{ $item->resistance_fire === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Fire</div>
-                            <div class="col-md-6">{{ $item->resistance_fire }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_ice === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Ice</div>
-                            <div class="col-md-6">{{ $item->resistance_ice }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_lightning === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Lightning</div>
-                            <div class="col-md-6">{{ $item->resistance_lightning }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_holy === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Holy</div>
-                            <div class="col-md-6">{{ $item->resistance_holy }}</div>
-                        </div>
-                        <div class="row {{ $item->resistance_darkness === 0 ? 'text-muted' : null }}">
-                            <div class="col-md-6">Darkness</div>
-                            <div class="col-md-6">{{ $item->resistance_darkness }}</div>
-                        </div>
+                        {!! stat_row($item, 'resistance_fire', 'Fire') !!}
+                        {!! stat_row($item, 'resistance_ice', 'Ice') !!}
+                        {!! stat_row($item, 'resistance_lightning', 'Lightning') !!}
+                        {!! stat_row($item, 'resistance_holy', 'Holy') !!}
+                        {!! stat_row($item, 'resistance_darkness', 'Darkness') !!}
                     </div>
                 </div>
 
@@ -147,11 +101,50 @@
             </div>
 
             <div class="col-md-4">
-                space (drop list?)
+                <h5>Source</h5>
+
+                store purchaseable OR
+                    monster drop
+                    || chest drop
+
+                <h5 class="mt-4">Farming</h5>
+
+                recommended farming location (todo probs)
             </div>
 
             <div class="col-md-4">
-                space (?)
+                <h5>Extra</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">Value</div>
+                            <div class="col-md-6">{{ number_format($item->value) }}</div>
+                        </div>
+                        @if ($item->attribute1 !== null)
+                            <div class="row">
+                                <div class="col-md-6">Attribute</div>
+                                <div class="col-md-6">{{ ucfirst($item->attribute1) }}</div>
+                            </div>
+                            @if ($item->attribute2 !== null)
+                                <div class="row">
+                                    <div class="col-md-6">Attribute 2</div>
+                                    <div class="col-md-6">{{ ucfirst($item->attribute2) }}</div>
+                                </div>
+                            @endif
+                        @endif
+                        {{-- todo: hidden effect --}}
+                    </div>
+                    <div class="col-md-6">
+                        {!! $item->is_starter ? '<p>Starter item</p>' : null !!}
+                        {!! $item->is_shoppable ? '<p>Buyable from shop</p>' : null !!}
+                        {!! $item->is_consumable ? '<p>Consumable</p>' : null !!}
+                        {{-- todo: consumed for how much hp/mp and buffs? --}}
+                        {!! $item->is_consumed_over_time ? '<p>Consumed over time</p>' : null !!}
+                    </div>
+                </div>
+
+                <h5 class="mt-4">Usable By</h5>
+                todo
             </div>
         </div>
 
